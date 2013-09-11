@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Static.CSS
+module Client.CSS
     ( layoutCss
     ) where
 

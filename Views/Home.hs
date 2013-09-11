@@ -2,10 +2,10 @@
 
 module Views.Home (homeView) where
 
+import           Client.CSS                  (layoutCss)
 import           Data.Monoid                 (mempty)
 import           Data.Text.Lazy              (toStrict)
 import           Prelude                     hiding (div, head, id)
-import           Static.CSS                  (layoutCss)
 import           Text.Blaze.Html             (Html, toHtml)
 import           Text.Blaze.Html5            (Html, a, body, button,
                                               dataAttribute, div, docTypeHtml,
