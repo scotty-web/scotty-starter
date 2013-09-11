@@ -1,12 +1,16 @@
 module Main where
 
+import           Control.Applicative                  ((<$>))
 import           Controllers.Home                     (home, login)
-import           Network.Wai.Middleware.RequestLogger
-import           System.Environment
-import           Web.Scotty
+import           Network.Wai.Middleware.RequestLogger (logStdoutDev)
+import           System.Environment                   (getEnv)
+import           Web.Scotty                           (middleware, scotty)
+
 
 main :: IO ()
-main = scotty 3000 $ do
+main = do
+  port <- read <$> getEnv "PORT"
+  scotty port $ do
          middleware logStdoutDev
          home >> login
 
