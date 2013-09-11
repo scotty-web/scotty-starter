@@ -24,6 +24,7 @@ executable app
                        wai ==1.3.*,
                        warp ==1.3.*,
                        wai-extra >=1.3 && <1.4, 
+                       wai-middleware-static,
                        scotty,
                        clay, 
                        text, 
