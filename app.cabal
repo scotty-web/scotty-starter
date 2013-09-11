@@ -17,7 +17,7 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 executable app
-  -- main-is:             
+  main-is:             Main.hs
   -- other-modules:       
   other-extensions:    OverloadedStrings
   build-depends:       base ==4.5.*, 
