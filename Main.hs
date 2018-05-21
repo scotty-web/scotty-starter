@@ -9,9 +9,7 @@ import           System.Environment                   (getEnv)
 import           Web.Scotty                           (middleware, scotty)
 
 main :: IO ()
-main = do
-  port <- read <$> getEnv "PORT"
-  scotty port $ do
+main = scotty 3000 $ do
          middleware $ staticPolicy (noDots >-> addBase "static/images") -- for favicon.ico
          middleware logStdoutDev
          home >> login
