@@ -12,11 +12,7 @@ import           Text.Read                            (readMaybe)
 import           Web.Scotty                           (middleware, scotty)
 
 main :: IO ()
-main = do
-  port <- fromMaybe 3000
-        . join
-        . fmap readMaybe <$> lookupEnv "PORT"
-  scotty port $ do
+main = scotty 3000 $ do
          middleware $ staticPolicy (noDots >-> addBase "static/images") -- for favicon.ico
          middleware logStdoutDev
          home >> login >> post
